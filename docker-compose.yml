@@ -122,7 +122,7 @@ services:
     container_name: ${PROJECT_NAME}_node
     working_dir: /var/www/frontend
     volumes:
-      - '/var/www/frontend/node_modules'
+      - ./src/frontend/node_modules:/var/www/frontend/node_modules
     volumes_from:
       - data
 
