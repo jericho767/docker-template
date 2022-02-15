@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:8.0-fpm
 RUN apt-get update
 RUN apt-get install -y git cron
 RUN echo "* * * * * www-data php /var/www/backend/artisan schedule:run >> /dev/null 2>&1" >> /etc/crontab
