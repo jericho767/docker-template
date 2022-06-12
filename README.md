@@ -131,6 +131,7 @@ docker-compose run node npm install
 ```
 
 ### Setting up from scratch
+Delete the `.keep` file.
 ```
 // Creates a react redux project inside `src/frontend` directory
 docker-compose run node npx create-react-app . --template redux
