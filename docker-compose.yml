@@ -121,8 +121,10 @@ services:
     image: ${PROJECT_NAME}_node:${ENVIRONMENT}
     container_name: ${PROJECT_NAME}_node
     working_dir: /var/www/frontend
-    volumes:
-      - ./src/frontend/node_modules:/var/www/frontend/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    ports:
+      - "3000:3000"
     volumes_from:
       - data
 

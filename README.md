@@ -121,7 +121,16 @@ docker-compose run php php artisan --testsuite=<<directory>>
 Read more in [laravel documentation for testing](https://laravel.com/docs/8.x/testing).
 
 ## Setting up ReactJS
-Clone/Checkout/Paste ReactJS code inside `src/frontend`.
+
+### Setting up from existing project
+Clone/Checkout/Paste ReactJS code inside `src/frontend`.  
+Normally run `npm` commands using the `node` service.
+```
+// Sample for running `npm install` command
+docker-compose run node npm install
+```
+
+### Setting up from scratch
 ```
 // Creates a react redux project inside `src/frontend` directory
 docker-compose run node npx create-react-app . --template redux
@@ -132,8 +141,13 @@ docker-compose run node npx create-react-app /var/www/frontend --template redux
 ```
 For development, use command:
 ```
-docker-compose run -p 3000:3000 -e CHOKIDAR_USEPOLLING=true npm run start
+docker-compose run -p 3000:3000 -e CHOKIDAR_USEPOLLING=true node npm run start
 ```
+or
+```
+docker-compose up -d node
+```
+
 Access: `http://localhost:3000`.
 
 For deployment, use command:
